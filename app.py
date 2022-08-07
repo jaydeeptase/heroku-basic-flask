@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, send_from_directory
 from datetime import datetime
 app = Flask(__name__)
 
@@ -13,6 +13,23 @@ def homepage():
     <img src="http://loremflickr.com/600/400" />
     """.format(time=the_time)
 
+# @app.route('/docs/<id>')
+# def get_pdf(id=None):
+#     if id is not None:
+#         binary_pdf = get_binary_pdf_data_from_database(id=id)
+#         response = make_response(binary_pdf)
+#         response.headers['Content-Type'] = 'application/pdf'
+#         response.headers['Content-Disposition'] = \
+#             'inline; filename=%s.pdf' % 'yourfilename'
+#         return response
+    
+@app.route('/s/file/<id>')
+def show_static_pdf(id=None):
+    # with open('files/1.pdf', 'rb') as static_file:
+    #     return send_file(static_file, attachment_filename='1.pdf')
+    return send_from_directory('files', id+'.pdf')
+
+    
 if __name__ == '__main__':
-    app.run(debug=True, use_reloader=True)
+    app.run(debug=True, use_reloader=True, port=8000, host="localhost")
 
