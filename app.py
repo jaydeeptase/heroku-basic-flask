@@ -14,10 +14,10 @@ def homepage():
     """.format(time=the_time)
 
 @app.route('/canvas.html')
-def homepage():
+def canvaspage():
     the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
 
-    return """
+    return """`
     <h1>Hello heroku, this is canvas</h1>
     <p>It is currently {time}.</p>
 
