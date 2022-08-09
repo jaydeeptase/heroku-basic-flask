@@ -1,6 +1,6 @@
 from flask import Flask, send_from_directory
 from datetime import datetime
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static')
 
 @app.route('/')
 def homepage():
@@ -17,12 +17,9 @@ def homepage():
 def canvaspage():
     the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
 
-    return """`
-    <h1>Hello heroku, this is canvas</h1>
-    <p>It is currently {time}.</p>
-
-    <img src="http://loremflickr.com/600/400" />
-    """.format(time=the_time)
+    return """
+    <img src="/static/images/Portfolio.png" />
+    """
     
 # @app.route('/docs/<id>')
 # def get_pdf(id=None):
