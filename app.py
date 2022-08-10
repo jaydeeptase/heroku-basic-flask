@@ -22,7 +22,7 @@ def canvaspage():
 @app.route('/pgimfact.html')
 def pgimfactpage():
     return """
-    <img src="/static/images/pgimfact.png" />
+    <img src="/static/images/pgimfact.png" width="400"/>
     """
 # @app.route('/docs/<id>')
 # def get_pdf(id=None):
