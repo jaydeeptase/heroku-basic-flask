@@ -15,12 +15,15 @@ def homepage():
 
 @app.route('/canvas.html')
 def canvaspage():
-    the_time = datetime.now().strftime("%A, %d %b %Y %l:%M %p")
-
     return """
     <img src="/static/images/Portfolio.png" />
     """
-    
+
+@app.route('/pgimfact.html')
+def canvaspage():
+    return """
+    <img src="/static/images/pgimfact.png" />
+    """
 # @app.route('/docs/<id>')
 # def get_pdf(id=None):
 #     if id is not None:
