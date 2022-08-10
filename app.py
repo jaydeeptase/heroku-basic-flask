@@ -16,7 +16,7 @@ def homepage():
 @app.route('/canvas.html')
 def canvaspage():
     return """
-    <img src="/static/images/Portfolio.png" width="90%"/>
+    <img src="/static/images/Portfolio.png" width="110%"/>
     """
 
 @app.route('/pgimfact.html')
