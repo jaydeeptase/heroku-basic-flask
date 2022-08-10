@@ -20,7 +20,7 @@ def canvaspage():
     """
 
 @app.route('/pgimfact.html')
-def canvaspage():
+def pgimfactpage():
     return """
     <img src="/static/images/pgimfact.png" />
     """
